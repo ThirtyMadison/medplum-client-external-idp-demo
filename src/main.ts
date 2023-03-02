@@ -1,43 +1,43 @@
 import { MedplumClient } from '@medplum/core';
-
 /**
  * The Medplum API server URL.
  * The default value for Medplum's hosted API server is "https://api.medplum.com/".
  * If you are using your own Medplum server, then you can set this value to your server URL.
  */
-const MEDPLUM_BASE_URL = 'https://api.medplum.com/';
+const MEDPLUM_BASE_URL='https://api.medplum-staging.fortymadison.com/';
 
 /**
  * Your Medplum project ID.
  * You can find this value on the "Project Admin" page in the Medplum web app.
  */
-const MEDPLUM_PROJECT_ID = 'f4d16028-3de1-4473-bf66-899461b658c6';
+const MEDPLUM_PROJECT_ID = '1bd68e40-cf6d-44d3-b1e3-099fd31e9946';
 
 /**
  * Your Medplum client ID.
  * You can find this value on the "Project Admin" page in the Medplum web app.
  * Note that the client must have the correct external auth provider configured.
  */
-const MEDPLUM_CLIENT_ID = 'e5054c52-4f72-4f42-b829-33c7fab5ad91';
+const MEDPLUM_CLIENT_ID = 'fff3dc35-a351-46cc-9a29-5549895be140';
 
 /**
  * Your web application redirect URL.
  * This value must match the redirect URI in your Medplum client application.
  */
-const WEB_APP_REDIRECT_URI = 'http://localhost:8000';
+const WEB_APP_REDIRECT_URI = 'http://localhost:3002';
 
 /**
  * External OAuth2 "authorize" endpoint URL.
  * For example, this would be an Auth0, AWS Cognito, or Okta URL.
  * This value is specific to your external auth provider.
  */
-const EXTERNAL_AUTHORIZE_URL = 'https://dev-o5iawa52epeoajk5.us.auth0.com/authorize';
+const EXTERNAL_AUTHORIZE_URL = 'https://dev-doctor-thirtymadison.us.auth0.com/authorize';
 
 /**
  * External OAuth2 client ID.
  * This value is specific to your external auth provider.
  */
-const EXTERNAL_CLIENT_ID = 'AQsDXia1CzcviCx8k92sb2SNfxG3Wekk';
+  const EXTERNAL_CLIENT_ID='0XFJnOODBbkg2y8ee6Ly4ii7Xt97jDDs';
+
 
 /**
  * External OAuth2 redirect URI.
@@ -89,8 +89,8 @@ $('userinfo').addEventListener('click', () => {
 // The practitioners button handler
 // Use the access token to call the "/userinfo" to get current user details
 // Display the output in the window
-$('practitioners').addEventListener('click', () => {
-  medplum.search('Practitioner').then(showOutput).catch(alert);
+$('Tasks').addEventListener('click', () => {
+  medplum.search('Task').then(showOutput).catch(alert)
 });
 
 function showOutput(obj: any): void {
